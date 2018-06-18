@@ -7,11 +7,11 @@ body{
 }
 
 #main{
+	width: 100%;
+	height: 100%;
 	display: grid;
 	grid-template-columns: 10vw 1fr 1fr 10vw;
     grid-template-rows: 100px repeat(3, 50px) auto 50px 50px auto;
-	width: 100%;
-	height: 100%;
 	grid-template-areas: 
 		". .        .       .    "
 		". .        title   title"
@@ -19,22 +19,21 @@ body{
 		". image    tribute .    "
 		". image    tribute .    "
 		". image    author  .    "
-		". caption  .       .    "
-		". caption  .       .    ";
-		
-		
+		". .        .       .    "
+		". .        .       .    ";
 }
+
 #title{
 	grid-area: title;	
 	/* inner-text: https://jsfiddle.net/NeqCC/ */
 	color: rgba(220,25,9, 0.8);
     text-shadow: 1px 4px 6px #f3f3f3, 0 0 0 #000, 1px 4px 6px #f3f3f3;
 	font-size: 10vw;
-	font-weight: 600;
 	align-self: end;
 	margin-bottom: 0px;
 	font-family: 'Dancing Script', cursive;
 }
+
 #img-div{
 	display: flex;
 	flex-direction: column;
@@ -42,23 +41,17 @@ body{
 	max-width: 70%;
 }
 
-
-img{
-  max-width: 100%; 
-  display: block; 
-  height: auto;
-  margin: auto;
-}
 #image{
 	box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 	align-self: flex-start;
 	width: 100%;
 }
 
-#author-text{
-	grid-area: author;
-	text-transform: uppercase;
-	justify-self: center;
+img{
+  max-width: 100%; 
+  display: block; 
+  height: auto;
+  margin: auto;
 }
 
 #img-caption{
@@ -74,8 +67,42 @@ img{
 	background-color: #ffffff;
 	max-width: 490px;
 	font-size: 16px;
-	padding: 30px;
+	padding: 50px;
 	border-radius: 10px;
 	margin-top: 0px;
 	box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 }
+
+#author-text{
+	grid-area: author;
+	text-transform: uppercase;
+	justify-self: center;
+}
+
+@media (max-width: 1000px){
+	#main{
+		grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 50px repeat(3, 200px) repeat(5, 150px);
+		justify-items: center;
+		/*background-color: black;*/
+		grid-template-areas: 
+		"title   title"
+		"title   title"
+		"tribute tribute"
+		"tribute tribute"
+		"tribute  tribute "
+		"image   image "
+		"image   image "
+		"image   image "
+		"image   image "
+		"author author ";		
+	
+
+	}
+	
+	#title{
+		font-size: 15vw;
+		
+	}
+}
+
