@@ -21,6 +21,8 @@ body{
 	color: #dc1909;
 	font-size: 75px;
 	background-color: black;
+	align-self: end;
+	margin-bottom: 0px;
 	font-family: 'Dancing Script', cursive;
 }
 #img-div{
