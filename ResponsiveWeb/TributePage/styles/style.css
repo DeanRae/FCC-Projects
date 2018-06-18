@@ -1,58 +1,80 @@
 @charset "UTF-8";
 body{
 	background-color: #f3f3f3;
+	font-family:  "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	color: #303234;
+	font-size: 16px;
 }
+
 #main{
-	
 	display: grid;
-	grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+	grid-template-columns: 10vw 1fr 1fr 10vw;
+    grid-template-rows: 100px repeat(3, 50px) auto 50px 50px auto;
+	width: 100%;
+	height: 100%;
 	grid-template-areas: 
-		". .     .     . title   title   title"
-		". image image . title   title   title"
-		". image image . tribute tribute tribute"
-		". image image . tribute tribute tribute"
-		". image image . tribute tribute tribute"
-		". image image . tribute tribute tribute"
-		". image image . author  author  author"
+		". .        .       .    "
+		". .        title   title"
+		". image    title   title"
+		". image    tribute .    "
+		". image    tribute .    "
+		". image    author  .    "
+		". caption  .       .    "
+		". caption  .       .    ";
+		
+		
 }
 #title{
-	grid-area: title;
-	color: #dc1909;
-	font-size: 75px;
-	background-color: black;
+	grid-area: title;	
+	/* inner-text: https://jsfiddle.net/NeqCC/ */
+	color: rgba(220,25,9, 0.8);
+    text-shadow: 1px 4px 6px #f3f3f3, 0 0 0 #000, 1px 4px 6px #f3f3f3;
+	font-size: 10vw;
+	font-weight: 600;
 	align-self: end;
 	margin-bottom: 0px;
 	font-family: 'Dancing Script', cursive;
 }
 #img-div{
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	grid-area:image;
-    grid-template-rows: auto 0.35fr 1fr;
-    grid-template-areas: "img" 
-						 "."
-						 "content";
+	max-width: 70%;
 }
 
+
+img{
+  max-width: 100%; 
+  display: block; 
+  height: auto;
+  margin: auto;
+}
 #image{
-	grid-area: img;
-	
+	box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
+	align-self: flex-start;
+	width: 100%;
 }
 
 #author-text{
 	grid-area: author;
+	text-transform: uppercase;
+	justify-self: center;
 }
 
 #img-caption{
 	color: grey;
-	grid-area: content;
+	width: 380px;
 	text-align: center;
-	font-size: 20px;
+	padding-top: 10px;
+
 }
+
 #tribute-info{
 	grid-area: tribute;
 	background-color: #ffffff;
+	font-size: 16px;
 	padding: 30px;
 	border-radius: 10px;
 	margin-top: 0px;
+	box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 }
